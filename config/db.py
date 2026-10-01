@@ -1,8 +1,8 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
+from config.setting import settings
 
-DATABASE_URL = "mysql+pymysql://root:@localhost:3306/fastapi_db"
-
+DATABASE_URL = settings.DATABASE_URL
 engine = create_engine(DATABASE_URL)
 
 SessionLocal = sessionmaker(
